@@ -3,625 +3,413 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PT Unitek Mitra Solusi | Rugged Embedded IT Infrastructure & Autonomous AI Systems</title>
-  <meta name="description" content="Infrastruktur jaringan industri, managed NOC 24/7, rekayasa software kustom, dan sistem agen AI otonom untuk sektor manufaktur & korporat di Jabodetabek.">
-  
-  <!-- Exact BotBlox Typography: Space Grotesk + IBM Plex Mono + IBM Plex Sans -->
+  <title>PT Unitek Mitra Solusi | Managed IT Services, Network Infrastructure & Enterprise Software</title>
+  <meta name="description" content="Mitra Managed Service Provider (MSP), instalasi jaringan industri LAN/Fiber Optik, sistem CCTV NVR, software ERP kustom, dan pemeliharaan IT korporat di Cikarang, Bekasi, dan Jabodetabek.">
+  <meta name="keywords" content="PT Unitek Mitra Solusi, IT MSP Cikarang, Jasa Maintenance IT Bekasi, Instalasi Jaringan Pabrik, CCTV NVR Industri, ERP Custom Cikarang">
+
+  <!-- Open Graph & Social Meta -->
+  <meta property="og:title" content="PT Unitek Mitra Solusi — Enterprise IT Solutions & Managed Services">
+  <meta property="og:description" content="Layanan Managed IT Services, Instalasi Jaringan Industri, CCTV NVR, dan Rekayasa Software Bisnis untuk Kawasan Industri Jabodetabek.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://unitek.git.unitek.id/">
+
+  <!-- Corporate Typography: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PT Unitek Mitra Solusi",
+    "url": "https://unitek.id",
+    "logo": "https://unitek.id/asset/logo.png",
+    "description": "Penyedia layanan Managed Service Provider (MSP), infrastruktur jaringan industri, CCTV surveillance, dan software bisnis di Indonesia.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Inspeksi Kalimalang, Tegal Gede, RT.10/RW.04, Pasirsari",
+      "addressLocality": "Cikarang Selatan",
+      "addressRegion": "Jawa Barat",
+      "postalCode": "17530",
+      "addressCountry": "ID"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+62-822-1392-8230",
+      "contactType": "customer support",
+      "email": "info@unitek.id",
+      "areaServed": ["Cikarang", "Bekasi", "Karawang", "Jakarta", "Tangerang", "Bogor"],
+      "availableLanguage": ["Indonesian", "English"]
+    }
+  }
+  </script>
 
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            space: ['"Space Grotesk"', 'sans-serif'],
-            sans: ['"IBM Plex Sans"', '-apple-system', 'sans-serif'],
-            mono: ['"IBM Plex Mono"', 'monospace'],
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
-            blox: {
-              black: '#000000',
-              dark: '#080808',
-              surface: '#0d0d0d',
-              surfaceHover: '#141414',
-              border: 'rgba(255, 255, 255, 0.12)',
-              borderSubtle: 'rgba(255, 255, 255, 0.06)',
-              orange: '#ff5500', // Exact BotBlox Signature Orange
-              orangeHover: '#e64d00',
-              emerald: '#10b981',
-              muted: '#888888',
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              800: '#0c4a6e',
+              900: '#082f49',
+              accent: '#d97706',
+              emerald: '#059669',
+            },
+            surface: {
+              DEFAULT: '#ffffff',
+              subtle: '#f8fafc',
+              border: '#e2e8f0',
+              dark: '#0f172a',
+              darkcard: '#1e293b',
             }
           }
         }
       }
     }
   </script>
+
   <style>
     * { -webkit-tap-highlight-color: transparent; }
     body {
-      background-color: #000000;
-      color: #ffffff;
-      font-family: 'IBM Plex Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
     }
-    .font-space { font-family: 'Space Grotesk', sans-serif; }
-    .font-mono { font-family: 'IBM Plex Mono', monospace; }
-    
-    /* Exact BotBlox Corner Crosshairs */
-    .crosshair-card {
-      position: relative;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: #0d0d0d;
-    }
-    .crosshair-card::before, .crosshair-card::after {
-      content: '';
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      border-color: rgba(255, 255, 255, 0.6);
-      pointer-events: none;
-    }
-    .crosshair-card::before {
-      top: -1px;
-      left: -1px;
-      border-top: 1.5px solid;
-      border-left: 1.5px solid;
-    }
-    .crosshair-card::after {
-      bottom: -1px;
-      right: -1px;
-      border-bottom: 1.5px solid;
-      border-right: 1.5px solid;
-    }
-    
-    .grid-lines {
-      background-size: 32px 32px;
-      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    }
-    
     .tabular-nums { font-variant-numeric: tabular-nums; }
-    ::-webkit-scrollbar { width: 4px; height: 4px; }
-    ::-webkit-scrollbar-track { background: #000000; }
-    ::-webkit-scrollbar-thumb { background: #222222; }
-    ::-webkit-scrollbar-thumb:hover { background: #444444; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
   </style>
 </head>
-<body class="bg-blox-black text-slate-100 antialiased flex flex-col min-h-screen selection:bg-blox-orange selection:text-white">
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
 
-  <!-- TOP ENGINEERING TICKER -->
-  <div class="border-b border-blox-borderSubtle bg-blox-dark text-xs py-2 px-4 sm:px-8 z-30">
+  <!-- TOP STATUS / CONTACT TICKER -->
+  <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 sm:px-8 border-b border-slate-800">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 font-mono text-[11px]">
-      <div class="flex items-center space-x-3 text-slate-400">
-        <span class="flex items-center gap-2 text-white font-semibold">
-          <span class="w-1.5 h-1.5 rounded-full bg-blox-emerald"></span>
+      <div class="flex items-center space-x-3">
+        <span class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
           PT UNITEK MITRA SOLUSI
         </span>
-        <span class="text-slate-700">/</span>
-        <span class="text-slate-400">RUGGED IT INFRASTRUCTURE & MANAGED SERVICES</span>
+        <span class="text-slate-600">•</span>
+        <span class="text-slate-400">IT Managed Services & Industrial Infrastructure</span>
       </div>
-      <div class="flex items-center space-x-5 text-slate-300">
-        <a href="tel:+6282213928230" class="hover:text-blox-orange transition flex items-center gap-1.5 font-medium">
-          <i data-lucide="phone" class="w-3 h-3 text-blox-orange"></i>
-          <span>DIRECT: +62 822 1392 8230</span>
+      <div class="flex items-center space-x-4 text-slate-300">
+        <a href="tel:+6282213928230" class="hover:text-amber-400 transition flex items-center gap-1.5">
+          <i data-lucide="phone" class="w-3 h-3 text-amber-500"></i>
+          <span>Hotline: +62 822 1392 8230</span>
         </a>
-        <span class="text-slate-700">/</span>
-        <span class="text-slate-400">JAKARTA • BEKASI • CIKARANG</span>
+        <span class="text-slate-600">•</span>
+        <a href="mailto:info@unitek.id" class="hover:text-amber-400 transition flex items-center gap-1.5">
+          <i data-lucide="mail" class="w-3 h-3 text-amber-500"></i>
+          <span>info@unitek.id</span>
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- NAVIGATION -->
-  <nav class="sticky top-0 z-50 bg-blox-black/95 backdrop-blur-md border-b border-blox-border">
+  <!-- NAVIGATION BAR -->
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
       
       <!-- LOGO -->
       <a href="index.html" class="flex items-center space-x-3 group">
-        <div class="w-7 h-7 rounded bg-blox-orange flex items-center justify-center font-mono font-bold text-white text-xs tracking-tighter">
+        <div class="w-9 h-9 rounded-lg bg-brand-900 flex items-center justify-center font-bold text-white text-sm shadow-md border border-slate-700">
           UMS
         </div>
         <div>
-          <div class="text-base font-bold tracking-tight text-white font-space">
-            UNITEK <span class="text-slate-400 font-normal">MITRA SOLUSI</span>
+          <div class="text-base font-extrabold tracking-tight text-slate-900">
+            UNITEK <span class="text-brand-600 font-semibold">MITRA SOLUSI</span>
           </div>
-          <div class="text-[9px] tracking-widest text-slate-500 font-mono -mt-1 uppercase">
-            Enterprise IT & AI Systems
+          <div class="text-[10px] tracking-wider text-slate-500 font-mono font-medium -mt-0.5 uppercase">
+            Enterprise IT & Engineering
           </div>
         </div>
       </a>
 
       <!-- DESKTOP NAV -->
-      <div class="hidden lg:flex items-center space-x-8 text-xs font-mono font-semibold uppercase tracking-wider text-slate-300">
-        <a href="#applications" class="hover:text-blox-orange transition">Where We Operate</a>
-        <a href="#why-us" class="hover:text-blox-orange transition">Why Us</a>
-        <a href="#solutions" class="hover:text-blox-orange transition">4 Core Pillars</a>
-        <a href="#calculator" class="hover:text-blox-orange transition">SLA Sizing</a>
-        <a href="#clients" class="hover:text-blox-orange transition">Clients</a>
+      <div class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-wider text-slate-600">
+        <a href="#services" class="hover:text-brand-600 transition">Layanan Utama</a>
+        <a href="#solutions" class="hover:text-brand-600 transition">4 Pilar Solusi</a>
+        <a href="#calculator" class="hover:text-brand-600 transition">Kalkulator SLA</a>
+        <a href="#clients" class="hover:text-brand-600 transition">Klien & Portofolio</a>
+        <a href="#about" class="hover:text-brand-600 transition">Profil Perusahaan</a>
       </div>
 
       <!-- CTA -->
-      <div class="hidden sm:flex items-center space-x-4">
-        <a href="#rfq" class="px-5 py-2.5 rounded bg-white hover:bg-slate-200 text-black font-bold text-xs font-mono uppercase tracking-wider transition shadow-lg flex items-center gap-2">
-          <span>REQUEST A QUOTE</span>
+      <div class="hidden sm:flex items-center space-x-3">
+        <a href="https://wa.me/6282213928230?text=Halo%20PT%20Unitek%20Mitra%20Solusi,%20saya%20ingin%20konsultasi%20kebutuhan%20IT%20perusahaan%20kami." target="_blank" class="px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition shadow flex items-center gap-2">
+          <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+          <span>Konsultasi Cepat</span>
+        </a>
+        <a href="#rfq" class="px-4 py-2.5 rounded-lg bg-brand-900 hover:bg-brand-800 text-white font-bold text-xs transition shadow flex items-center gap-1.5">
+          <span>Permintaan SPH</span>
           <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
         </a>
       </div>
 
-      <!-- MOBILE MENU -->
-      <div class="lg:hidden flex items-center">
-        <button id="mobile-menu-btn" class="p-2 text-slate-400 hover:text-white">
+      <!-- MOBILE MENU BUTTON -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-btn" class="p-2 text-slate-600 hover:text-slate-900" aria-label="Buka Menu">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </div>
 
     </div>
 
-    <div id="mobile-menu" class="lg:hidden hidden border-b border-blox-border bg-blox-dark px-6 py-4 space-y-3 font-mono text-xs uppercase">
-      <a href="#applications" class="block text-slate-300 hover:text-white py-1">Where We Operate</a>
-      <a href="#why-us" class="block text-slate-300 hover:text-white py-1">Why Us</a>
-      <a href="#solutions" class="block text-slate-300 hover:text-white py-1">4 Core Pillars</a>
-      <a href="#calculator" class="block text-slate-300 hover:text-white py-1">SLA Sizing</a>
-      <a href="#clients" class="block text-slate-300 hover:text-white py-1">Clients</a>
-      <a href="#rfq" class="block w-full text-center py-3 bg-blox-orange text-white font-bold rounded mt-2">Request Quote</a>
+    <!-- MOBILE DROPDOWN -->
+    <div id="mobile-menu" class="md:hidden hidden border-b border-slate-200 bg-white px-6 py-4 space-y-3 text-xs font-semibold uppercase">
+      <a href="#services" class="block text-slate-700 hover:text-brand-600 py-1.5">Layanan Utama</a>
+      <a href="#solutions" class="block text-slate-700 hover:text-brand-600 py-1.5">4 Pilar Solusi</a>
+      <a href="#calculator" class="block text-slate-700 hover:text-brand-600 py-1.5">Kalkulator SLA</a>
+      <a href="#clients" class="block text-slate-700 hover:text-brand-600 py-1.5">Klien & Portofolio</a>
+      <a href="#about" class="block text-slate-700 hover:text-brand-600 py-1.5">Profil Perusahaan</a>
+      <div class="pt-2 flex flex-col gap-2">
+        <a href="https://wa.me/6282213928230?text=Halo%20PT%20Unitek%20Mitra%20Solusi,%20saya%20ingin%20konsultasi%20kebutuhan%20IT." target="_blank" class="w-full text-center py-2.5 bg-emerald-600 text-white font-bold rounded-lg">Konsultasi WhatsApp</a>
+        <a href="#rfq" class="w-full text-center py-2.5 bg-brand-900 text-white font-bold rounded-lg">Request Penawaran Resmi (SPH)</a>
+      </div>
     </div>
   </nav>
 
-  <!-- HERO SECTION WITH THREE.JS 3D MESH -->
-  <section class="relative pt-16 pb-24 border-b border-blox-border grid-lines overflow-hidden">
-    
-    <!-- 3D WEBGL PARTICLE & HARDWARE BUS CANVAS -->
-    <div class="absolute inset-0 z-0 pointer-events-auto">
-      <canvas id="webgl-canvas" class="w-full h-full"></canvas>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 pointer-events-none">
-      <div class="max-w-3xl space-y-6">
+  <!-- HERO SECTION -->
+  <section class="relative bg-gradient-to-b from-white via-slate-50 to-slate-100 py-16 sm:py-24 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-blox-surface border border-blox-border text-[11px] font-mono text-slate-300 pointer-events-auto">
-          <span class="text-blox-orange font-bold font-mono">[ + ]</span>
-          <span>EMBEDDED SYSTEMS & IT INFRASTRUCTURE</span>
-          <span class="text-blox-orange font-bold font-mono">[ + ]</span>
-        </div>
-
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.08] font-space">
-          Our Digital Infrastructure Drives Modern Industrial Operations.
-        </h1>
-
-        <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl font-sans pointer-events-auto">
-          <strong>Mission-critical wired networking, 24/7 Managed NOC, custom backend software, and business-trained autonomous AI agents for industrial manufacturing and modern enterprises in Jabodetabek.</strong>
-        </p>
-
-        <!-- EXACT BOTBLOX BUTTON PAIR -->
-        <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pointer-events-auto font-mono text-xs uppercase font-bold tracking-wider">
-          <a href="#solutions" class="px-6 py-3.5 rounded bg-white hover:bg-slate-200 text-black text-center transition shadow-xl flex items-center justify-center gap-2">
-            <span>EXPLORE SYSTEMS</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
-          <a href="#rfq" class="px-6 py-3.5 rounded bg-transparent hover:bg-blox-surface text-white border border-blox-border text-center transition flex items-center justify-center gap-2 crosshair-card">
-            <span>REQUEST TECHNICAL QUOTE</span>
-          </a>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="absolute bottom-3 right-8 text-[10px] font-mono text-slate-500 pointer-events-none">
-      SYS-GRID: 3D INTERACTIVE HARDWARE BUS & NEURAL NODES
-    </div>
-  </section>
-
-  <!-- INTRODUCTION / MISSION MARQUEE (EXACT BOTBLOX STYLE) -->
-  <section class="border-b border-blox-border bg-blox-dark py-10 px-4 sm:px-8">
-    <div class="max-w-7xl mx-auto space-y-4">
-      <div class="text-[10px] font-mono text-blox-orange font-bold uppercase tracking-widest">MISSION STATEMENT</div>
-      <p class="font-mono text-lg sm:text-2xl text-slate-200 leading-relaxed max-w-5xl">
-        We build, secure, and manage the end-to-end digital infrastructure that modern businesses and manufacturing plants rely on 24/7.
-      </p>
-    </div>
-  </section>
-
-  <!-- SECTION 1: WHERE WE OPERATE (6 CARDS WITH BOTBLOX CORNER CROSSHAIRS) -->
-  <section id="applications" class="py-24 bg-blox-black border-b border-blox-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-blox-border pb-6">
-        <div>
-          <div class="text-xs font-mono text-blox-orange font-bold uppercase tracking-widest mb-1">WHERE WE OPERATE</div>
-          <h2 class="text-3xl sm:text-4xl font-bold text-white font-space tracking-tight">Mission-Critical Sectors</h2>
-        </div>
-        <a href="#rfq" class="text-xs font-mono text-white hover:text-blox-orange transition uppercase font-bold flex items-center gap-1.5">
-          <span>EXPLORE ALL DOMAINS</span>
-          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <!-- CARD 1 -->
-        <div class="p-7 rounded crosshair-card flex flex-col justify-between hover:bg-blox-surfaceHover transition space-y-4">
-          <div class="space-y-3">
-            <div class="text-[11px] font-mono text-slate-400 font-bold uppercase">Automotive & Fasteners</div>
-            <h3 class="font-bold text-xl text-white font-space">Mission-Critical Factory Floor</h3>
-            <p class="text-xs text-slate-300 leading-relaxed font-sans">
-              Wired high-bandwidth industrial LAN and high-density CCTV surveillance for automated assembly lines, robotic cells, and stamping presses.
-            </p>
-          </div>
-          <div class="pt-3 border-t border-blox-borderSubtle text-[11px] font-mono text-blox-orange font-bold flex items-center justify-between">
-            <span>SLA &lt; 15 MIN RESPONSE</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </div>
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="p-7 rounded crosshair-card flex flex-col justify-between hover:bg-blox-surfaceHover transition space-y-4">
-          <div class="space-y-3">
-            <div class="text-[11px] font-mono text-slate-400 font-bold uppercase">Chemical & Materials</div>
-            <h3 class="font-bold text-xl text-white font-space">Secure Multi-Branch ERP Infrastructure</h3>
-            <p class="text-xs text-slate-300 leading-relaxed font-body">
-              Multi-branch site-to-site VPNs, dedicated database server clustering, and remote ERP support (Accurate & SAP) with zero data loss.
-            </p>
-          </div>
-          <div class="pt-3 border-t border-blox-borderSubtle text-[11px] font-mono text-blox-orange font-bold flex items-center justify-between">
-            <span>CONTINUOUS BACKUP</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </div>
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="p-7 rounded crosshair-card flex flex-col justify-between hover:bg-blox-surfaceHover transition space-y-4">
-          <div class="space-y-3">
-            <div class="text-[11px] font-mono text-slate-400 font-bold uppercase">EV Charging & Energy Hubs</div>
-            <h3 class="font-bold text-xl text-white font-space">Commercial SPKLU Telemetry</h3>
-            <p class="text-xs text-slate-300 leading-relaxed font-body">
-              Real-time OCPP 1.6J/2.0.1 and Modbus TCP telemetry integration, charger load-balancing, and surveillance connectivity for EV stations.
-            </p>
-          </div>
-          <div class="pt-3 border-t border-blox-borderSubtle text-[11px] font-mono text-blox-orange font-bold flex items-center justify-between">
-            <span>OCPP 1.6J / MODBUS</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </div>
-        </div>
-
-        <!-- CARD 4 -->
-        <div class="p-7 rounded crosshair-card flex flex-col justify-between hover:bg-blox-surfaceHover transition space-y-4">
-          <div class="space-y-3">
-            <div class="text-[11px] font-mono text-slate-400 font-bold uppercase">Machinery & Robotics</div>
-            <h3 class="font-bold text-xl text-white font-space">Low-Latency Industrial Ethernet</h3>
-            <p class="text-xs text-slate-300 leading-relaxed font-body">
-              VLAN segregation for Omron/Siemens PLC networks, optical fiber backbones, and server rack management in high-noise environments.
-            </p>
-          </div>
-          <div class="pt-3 border-t border-blox-borderSubtle text-[11px] font-mono text-blox-orange font-bold flex items-center justify-between">
-            <span>FLUKE CERTIFIED</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </div>
-        </div>
-
-        <!-- CARD 5 -->
-        <div class="p-7 rounded crosshair-card flex flex-col justify-between hover:bg-blox-surfaceHover transition space-y-4">
-          <div class="space-y-3">
-            <div class="text-[11px] font-mono text-slate-400 font-bold uppercase">Corporate Headquarters</div>
-            <h3 class="font-bold text-xl text-white font-space">Access Control & Smart Office</h3>
-            <p class="text-xs text-slate-300 leading-relaxed font-body">
-              Centralized Mikrotik firewall filtering, UniFi wireless access points, RFID time-attendance, and workstation fleet lifecycle maintenance.
-            </p>
-          </div>
-          <div class="pt-3 border-t border-blox-borderSubtle text-[11px] font-mono text-blox-orange font-bold flex items-center justify-between">
-            <span>ISO 27001 STANDARD</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </div>
-        </div>
-
-        <!-- CARD 6 -->
-        <div class="p-7 rounded crosshair-card flex flex-col justify-between hover:bg-blox-surfaceHover transition space-y-4">
-          <div class="space-y-3">
-            <div class="text-[11px] font-mono text-slate-400 font-bold uppercase">Logistics & Warehousing</div>
-            <h3 class="font-bold text-xl text-white font-space">High-Bay Wireless & Storage NVR</h3>
-            <p class="text-xs text-slate-300 leading-relaxed font-body">
-              Seamless roaming WiFi for handheld barcode scanners, NVR storage 30-day retention, and automated inventory sync backends.
-            </p>
-          </div>
-          <div class="pt-3 border-t border-blox-borderSubtle text-[11px] font-mono text-blox-orange font-bold flex items-center justify-between">
-            <span>ZERO DEAD ZONES</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION 2: WHY TECHNICAL LEADERS CHOOSE US (01, 02, 03 BOTBLOX PATTERN) -->
-  <section id="why-us" class="py-24 bg-blox-dark border-b border-blox-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
-      
-      <div class="max-w-3xl space-y-2">
-        <div class="text-xs font-mono text-blox-orange font-bold uppercase tracking-widest">WHY US</div>
-        <h2 class="text-3xl sm:text-4xl font-bold text-white font-space tracking-tight">
-          Why Engineers & Plant Managers Choose Unitek.
-        </h2>
-        <p class="text-sm text-slate-400 leading-relaxed font-sans">
-          We built what standard retail IT shops cannot provide: true industrial-grade architecture, rigorous compliance, and guaranteed SLA response times.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <div class="p-8 rounded crosshair-card space-y-4">
-          <div class="font-mono text-3xl font-black text-blox-orange">01</div>
-          <h3 class="text-xl font-bold text-white font-space">End-to-End Responsibility</h3>
-          <p class="text-xs text-slate-300 leading-relaxed font-sans">
-            One single point of contact for the entire technology lifecycle: planning, procurement, hardware deployment, custom software development, and proactive 24/7 managed NOC.
-          </p>
-        </div>
-
-        <div class="p-8 rounded crosshair-card space-y-4">
-          <div class="font-mono text-3xl font-black text-blox-orange">02</div>
-          <h3 class="text-xl font-bold text-white font-space">Contractual SLA Guarantees</h3>
-          <p class="text-xs text-slate-300 leading-relaxed font-sans">
-            We operate under legally binding Service Level Agreements: 99.5% network uptime, emergency response in under 15 minutes, and scheduled monthly preventive on-site visits.
-          </p>
-        </div>
-
-        <div class="p-8 rounded crosshair-card space-y-4">
-          <div class="font-mono text-3xl font-black text-blox-orange">03</div>
-          <h3 class="text-xl font-bold text-white font-space">Autonomous AI Integration</h3>
-          <p class="text-xs text-slate-300 leading-relaxed font-sans">
-            Once physical and software foundations are ready, we deploy private AI agents trained specifically on your company's SOPs to automate administrative and support overhead.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION 3: 4 CORE SOLUTIONS MATRIX -->
-  <section id="solutions" class="py-24 bg-blox-black border-b border-blox-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
-      
-      <div class="max-w-3xl space-y-2">
-        <div class="text-xs font-mono text-blox-orange font-bold uppercase tracking-widest">OUR SOLUTIONS</div>
-        <h2 class="text-3xl sm:text-4xl font-bold text-white font-space tracking-tight">
-          The 4 Pillars of Unitek Engineering.
-        </h2>
-        <p class="text-sm text-slate-400 font-sans">
-          Explore our four distinct execution divisions designed to elevate your company's digital maturity.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <!-- PILLAR 1 -->
-        <div class="p-8 rounded crosshair-card space-y-5">
-          <div class="flex justify-between items-start font-mono text-xs">
-            <span class="text-blox-orange font-bold">PILLAR 01</span>
-            <span class="text-slate-500 font-semibold">INFRASTRUCTURE</span>
-          </div>
-          <h3 class="text-2xl font-bold text-white font-space">Managed IT Infrastructure & NOC</h3>
-          <p class="text-xs text-slate-300 leading-relaxed font-sans">
-            Rugged optical fiber distribution, industrial CAT6 cabling certified by Fluke Networks, high-density CCTV NVR storage matrices, and Mikrotik/Cisco firewall routing with 24/7 proactive monitoring under our U-Remote SLA.
-          </p>
-          <div class="grid grid-cols-2 gap-3 pt-3 border-t border-blox-borderSubtle text-xs font-mono text-slate-400">
-            <div>• 24/7 Proactive Monitoring</div>
-            <div>• Fluke Tested Cabling</div>
-            <div>• CCTV IP & NVR Storage</div>
-            <div>• Site-to-Site VPN Tunnel</div>
-          </div>
-        </div>
-
-        <!-- PILLAR 2 -->
-        <div class="p-8 rounded crosshair-card space-y-5">
-          <div class="flex justify-between items-start font-mono text-xs">
-            <span class="text-blox-orange font-bold">PILLAR 02</span>
-            <span class="text-slate-500 font-semibold">SOFTWARE LAB</span>
-          </div>
-          <h3 class="text-2xl font-bold text-white font-space">Custom Software & Backend Systems</h3>
-          <p class="text-xs text-slate-300 leading-relaxed font-sans">
-            Eliminating slow, vulnerable manual spreadsheet processes into secure web backends, automated approval workflows, ERP integrations (Accurate, SAP, custom modules), and internal client portals built with 100% TDD precision.
-          </p>
-          <div class="grid grid-cols-2 gap-3 pt-3 border-t border-blox-borderSubtle text-xs font-mono text-slate-400">
-            <div>• Custom ERP & Web Apps</div>
-            <div>• PostgreSQL & Database DB</div>
-            <div>• OpenAPI / RESTful Contracts</div>
-            <div>• 100% Test-Driven Dev</div>
-          </div>
-        </div>
-
-        <!-- PILLAR 3 -->
-        <div class="p-8 rounded crosshair-card space-y-5">
-          <div class="flex justify-between items-start font-mono text-xs">
-            <span class="text-blox-orange font-bold">PILLAR 03</span>
-            <span class="text-slate-500 font-semibold">INTELLIGENCE</span>
-          </div>
-          <h3 class="text-2xl font-bold text-white font-space">Autonomous AI Business Agents</h3>
-          <p class="text-xs text-slate-300 leading-relaxed font-sans">
-            Deploying private AI agents and autonomous digital assistants trained specifically on your company's SOPs, document archives, client communications, and inventory rules to automate repetitive administrative workflows.
-          </p>
-          <div class="grid grid-cols-2 gap-3 pt-3 border-t border-blox-borderSubtle text-xs font-mono text-slate-400">
-            <div>• Private Domain AI Assistants</div>
-            <div>• Automated Inbox/WA Triage</div>
-            <div>• Document OCR & Summary</div>
-            <div>• 24/7 Operations Autopilot</div>
-          </div>
-        </div>
-
-        <!-- PILLAR 4 -->
-        <div class="p-8 rounded crosshair-card space-y-5">
-          <div class="flex justify-between items-start font-mono text-xs">
-            <span class="text-blox-orange font-bold">PILLAR 04</span>
-            <span class="text-slate-500 font-semibold">EXPANSION</span>
-          </div>
-          <h3 class="text-2xl font-bold text-white font-space">B2B Digital Growth Engine</h3>
-          <p class="text-xs text-slate-300 leading-relaxed font-sans">
-            With internal IT foundations secured, we scale your commercial market presence: Awwwards-standard corporate portals, technical industrial SEO, B2B lead generation funnels, and interactive product showcases.
-          </p>
-          <div class="grid grid-cols-2 gap-3 pt-3 border-t border-blox-borderSubtle text-xs font-mono text-slate-400">
-            <div>• Impeccable B2B Portals</div>
-            <div>• Technical Industrial SEO</div>
-            <div>• Hyperframes Motion Decks</div>
-            <div>• Inbound Lead Acquisition</div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION 4: PROCUREMENT SIZING CALCULATOR -->
-  <section id="calculator" class="py-24 bg-blox-dark border-b border-blox-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
-      
-      <div class="max-w-3xl space-y-2">
-        <div class="text-xs font-mono text-blox-orange font-bold uppercase tracking-widest">INTERACTIVE SIZING CALCULATOR</div>
-        <h2 class="text-3xl sm:text-4xl font-bold text-white font-space tracking-tight">
-          Configure Your Facility IT & Managed SLA Retainer.
-        </h2>
-        <p class="text-sm text-slate-400 font-sans">
-          Adjust the parameters below to compute the recommended SLA package, response time metrics, and estimated monthly retainer.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 p-8 sm:p-10 rounded crosshair-card shadow-2xl">
-        
-        <div class="lg:col-span-7 space-y-8">
+        <!-- LEFT HERO COPY -->
+        <div class="lg:col-span-7 space-y-6">
           
-          <div class="space-y-3">
-            <div class="flex justify-between items-center text-xs font-mono">
-              <span class="text-slate-300 font-bold uppercase">1. Workstation & PC Nodes:</span>
-              <span class="text-blox-orange font-bold text-sm"><span id="val-pc">25</span> Units</span>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-brand-600"></span>
+            <span>Managed Service Provider (MSP) & IT Industrial Engineering</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+            Mitra Pengelolaan & Rekayasa IT Terpercaya untuk Industri dan Korporat.
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
+            PT Unitek Mitra Solusi menyediakan layanan menyeluruh mulai dari pemeliharaan operasional IT (Managed Service SLA), instalasi kabel LAN/Fiber Optik industri, sistem CCTV NVR, hingga rekayasa software ERP dan integrasi otomasi bisnis.
+          </p>
+
+          <!-- TRUST BULLETS -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs font-mono text-slate-700">
+            <div class="flex items-center gap-2 p-2.5 rounded-lg bg-white border border-slate-200 shadow-sm">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+              <span>SLA Respon &lt; 15 Mnt</span>
             </div>
-            <input type="range" id="input-pc" min="5" max="250" value="25" step="5" oninput="calculateSla()" class="w-full h-1.5 bg-blox-dark rounded appearance-none cursor-pointer accent-blox-orange">
-            <div class="flex justify-between text-[10px] font-mono text-slate-500">
-              <span>5 PCs</span>
-              <span>100 PCs (Mid-Plant)</span>
-              <span>250+ PCs (Enterprise)</span>
+            <div class="flex items-center gap-2 p-2.5 rounded-lg bg-white border border-slate-200 shadow-sm">
+              <i data-lucide="shield-check" class="w-4 h-4 text-brand-600 shrink-0"></i>
+              <span>Standar ISO 27001</span>
+            </div>
+            <div class="flex items-center gap-2 p-2.5 rounded-lg bg-white border border-slate-200 shadow-sm col-span-2 sm:col-span-1">
+              <i data-lucide="activity" class="w-4 h-4 text-amber-600 shrink-0"></i>
+              <span>24/7 Monitoring NOC</span>
             </div>
           </div>
 
-          <div class="space-y-3">
-            <div class="flex justify-between items-center text-xs font-mono">
-              <span class="text-slate-300 font-bold uppercase">2. CCTV IP Cameras & Security Points:</span>
-              <span class="text-white font-bold text-sm"><span id="val-cctv">16</span> Channels</span>
-            </div>
-            <input type="range" id="input-cctv" min="4" max="128" value="16" step="4" oninput="calculateSla()" class="w-full h-1.5 bg-blox-dark rounded appearance-none cursor-pointer accent-white">
-            <div class="flex justify-between text-[10px] font-mono text-slate-500">
-              <span>4 Points</span>
-              <span>32 Points (Factory Floor)</span>
-              <span>128 Points (Campus)</span>
-            </div>
-          </div>
-
-          <div class="space-y-3">
-            <div class="flex justify-between items-center text-xs font-mono">
-              <span class="text-slate-300 font-bold uppercase">3. Managed Server & Switch Racks:</span>
-              <span class="text-white font-bold text-sm"><span id="val-server">4</span> Racks</span>
-            </div>
-            <input type="range" id="input-server" min="1" max="20" value="4" step="1" oninput="calculateSla()" class="w-full h-1.5 bg-blox-dark rounded appearance-none cursor-pointer accent-white">
-          </div>
-
-          <div class="pt-4 border-t border-blox-borderSubtle flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <input type="checkbox" id="check-ai" onchange="calculateSla()" class="w-4 h-4 rounded bg-blox-dark border-blox-border text-blox-orange focus:ring-0">
-              <span class="text-xs font-medium text-slate-300">Integrate Autonomous AI Agent Workflow Module</span>
-            </div>
-            <span class="text-xs font-mono text-blox-orange font-semibold">+ AI Assistant</span>
-          </div>
-
-        </div>
-
-        <div class="lg:col-span-5 flex flex-col justify-between p-7 rounded bg-blox-dark border border-blox-border space-y-6">
-          
-          <div class="space-y-4">
-            <div class="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-widest pb-3 border-b border-blox-borderSubtle">
-              RECOMMENDED SLA SPECIFICATION
-            </div>
-
-            <div>
-              <div class="text-[11px] text-slate-400 font-mono">TIER PACKAGE:</div>
-              <div id="est-package" class="text-2xl font-bold text-white mt-0.5 font-space">U-ITSM Business Core</div>
-            </div>
-
-            <div class="space-y-2 text-xs font-mono text-slate-300">
-              <div class="flex justify-between">
-                <span class="text-slate-400">Response SLA:</span>
-                <span id="est-sla" class="font-bold text-blox-emerald">&lt; 15 Minutes</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-slate-400">Preventive On-Site:</span>
-                <span id="est-visit" class="text-white">2x / Month + 24/7 On-Call</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-slate-400">Continuous Backup:</span>
-                <span class="text-white">30-Day NVR & DB Snapshot</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="pt-5 border-t border-blox-borderSubtle space-y-3">
-            <div class="flex justify-between items-baseline">
-              <span class="text-xs text-slate-400 font-mono">Estimated Retainer:</span>
-              <div class="text-right">
-                <div id="est-price" class="text-2xl font-mono font-bold text-blox-orange">Rp 4.500.000</div>
-                <div class="text-[10px] text-slate-500 font-mono">/ month (Billed Monthly)</div>
-              </div>
-            </div>
-
-            <a href="#rfq" class="w-full py-3.5 bg-blox-orange hover:bg-blox-orangeHover text-white font-bold text-xs font-mono uppercase tracking-wider rounded transition flex items-center justify-center gap-2">
-              <span>Request Formal Proposal (SPH)</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          <!-- CTAS -->
+          <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 font-semibold text-xs uppercase tracking-wider">
+            <a href="#rfq" class="px-6 py-3.5 rounded-lg bg-brand-900 hover:bg-brand-800 text-white text-center transition shadow-lg flex items-center justify-center gap-2">
+              <span>Ajukan Survey & Penawaran (SPH)</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="#calculator" class="px-6 py-3.5 rounded-lg bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 text-center transition shadow-sm flex items-center justify-center gap-2">
+              <i data-lucide="calculator" class="w-4 h-4 text-slate-500"></i>
+              <span>Simulasi Sizing SLA</span>
             </a>
           </div>
 
         </div>
 
+        <!-- RIGHT HERO METRIC CARD -->
+        <div class="lg:col-span-5">
+          <div class="bg-white rounded-2xl border border-slate-200 p-7 sm:p-8 shadow-xl space-y-6 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-50 rounded-bl-full -z-0"></div>
+            
+            <div class="relative z-10 space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-100 font-mono text-xs text-slate-500">
+                <span>OPERATIONAL EXCELLENCE</span>
+                <span class="text-emerald-600 font-bold">Kawasan Cikarang & Bekasi</span>
+              </div>
+
+              <div class="space-y-4">
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                  <div class="text-[11px] font-mono text-slate-500">JAMINAN NETWORK UPTIME</div>
+                  <div class="text-3xl font-extrabold text-slate-900 font-mono">99.5% <span class="text-xs font-normal text-emerald-600">SLA Contractual</span></div>
+                  <p class="text-xs text-slate-600">Mitigasi downtime pabrik dengan failover router & redundant link.</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                  <div class="text-[11px] font-mono text-slate-500">PEMELIHARAAN PREVENTIF</div>
+                  <div class="text-2xl font-bold text-slate-900 font-mono">Rutin Bulanan <span class="text-xs font-normal text-brand-600">+ On-Call 24/7</span></div>
+                  <p class="text-xs text-slate-600">Pembersihan server, penataan kabel rack, audit backup data.</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                  <div class="text-[11px] font-mono text-slate-500">KEPATUHAN LEGAL & PERPAJAKAN</div>
+                  <div class="text-base font-bold text-slate-900">Entitas Resmi PT & Faktur Pajak</div>
+                  <p class="text-xs text-slate-600">Kepatuhan SAK EMKM, pelaporan resmi PPh Final, dan invoice B2B.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR / CLIENT LOGO GRID -->
+  <section id="clients" class="py-12 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
+      
+      <div class="text-center space-y-1">
+        <h2 class="text-xs font-mono font-bold uppercase tracking-widest text-slate-500">Dipercaya Oleh Perusahaan & Industri Manufaktur</h2>
+        <p class="text-xs text-slate-400">Implementasi nyata infrastruktur IT, CCTV surveillance, dan software operasional</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 pt-2">
+        
+        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 flex flex-col items-center justify-center text-center space-y-1 hover:border-brand-500 transition">
+          <span class="font-bold text-xs text-slate-800">PT Showa Kosan Indonesia</span>
+          <span class="text-[10px] font-mono text-slate-500">Jababeka Business Loft</span>
+        </div>
+
+        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 flex flex-col items-center justify-center text-center space-y-1 hover:border-brand-500 transition">
+          <span class="font-bold text-xs text-slate-800">PT Iwata Bolt Indonesia</span>
+          <span class="text-[10px] font-mono text-slate-500">Delta Silicon 5 Lippo</span>
+        </div>
+
+        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 flex flex-col items-center justify-center text-center space-y-1 hover:border-brand-500 transition">
+          <span class="font-bold text-xs text-slate-800">PT Bitech Japan Gasket</span>
+          <span class="text-[10px] font-mono text-slate-500">Cikarang Industrial Hub</span>
+        </div>
+
+        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 flex flex-col items-center justify-center text-center space-y-1 hover:border-brand-500 transition">
+          <span class="font-bold text-xs text-slate-800">PT Prastiwahyu Tunas Eng.</span>
+          <span class="text-[10px] font-mono text-slate-500">Jababeka Tahap II</span>
+        </div>
+
+        <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 flex flex-col items-center justify-center text-center space-y-1 hover:border-brand-500 transition col-span-2 sm:col-span-1">
+          <span class="font-bold text-xs text-slate-800">PT Seiren Indonesia</span>
+          <span class="text-[10px] font-mono text-slate-500">Kawasan Industri Cikarang</span>
+        </div>
+
+      </div>
+
+      <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-2 text-xs font-medium text-slate-500 pt-3">
+        <span>• PT Duta Karya Solusindo</span>
+        <span>• PT Adikara Satria Teknik</span>
+        <span>• PT Global Karya Metalindo</span>
+        <span>• PT Pilar Trijaya Lestari</span>
       </div>
 
     </div>
   </section>
 
-  <!-- SECTION 5: PROVEN CLIENT TRUST & CASE STUDIES -->
-  <section id="clients" class="py-24 bg-blox-black border-b border-blox-border">
+  <!-- SECTION: 4 CORE PILLARS OF SOLUTION -->
+  <section id="solutions" class="py-20 bg-slate-50 border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
       
       <div class="max-w-3xl space-y-2">
-        <div class="text-xs font-mono text-blox-orange font-bold uppercase tracking-widest">OUR CUSTOMERS</div>
-        <h2 class="text-3xl sm:text-4xl font-bold text-white font-space tracking-tight">
-          These Teams Actually Ship on Our Infrastructure.
+        <div class="text-xs font-mono font-bold uppercase tracking-widest text-brand-600">4 PILAR SOLUSI TEKNOLOGI</div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Solusi Terintegrasi dari Fondasi Fisik hingga Otomasi Sistem.
         </h2>
+        <p class="text-sm text-slate-600">
+          Setiap pilar dirancang untuk menutup celah risiko operasional dan meningkatkan efisiensi kerja tim perusahaan Anda.
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
-        <div class="p-7 rounded crosshair-card space-y-3">
-          <div class="text-[10px] font-mono text-blox-emerald font-bold">JABABEKA INDUSTRIAL ESTATE • 4+ YRS</div>
-          <h3 class="font-bold text-lg text-white font-space">PT Showa Kosan Indonesia</h3>
-          <p class="text-xs text-slate-400 leading-relaxed font-sans">
-            Ginza Business Loft — Long-term U-Remote & U-ITSM retainer, ERP Accurate server infrastructure, and secure network management.
+        <!-- PILAR 1 -->
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4 hover:shadow-md transition">
+          <div class="flex justify-between items-start">
+            <span class="px-2.5 py-1 rounded bg-brand-50 text-brand-700 font-mono text-xs font-bold">PILAR 01</span>
+            <i data-lucide="network" class="w-6 h-6 text-brand-600"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Managed IT Infrastructure & Network NOC</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Perencanaan dan instalasi kabel LAN industri CAT6 (tersertifikasi Fluke Test), distribusi Fiber Optik pabrik, konfigurasi firewall router MikroTik/Cisco, VPN site-to-site, dan monitoring kesehatan link 24/7.
           </p>
+          <ul class="pt-3 border-t border-slate-100 grid grid-cols-2 gap-2 text-xs text-slate-700 font-medium">
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Penarikan Kabel LAN & Fiber</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Setting Server Rack & UPS</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Kamera CCTV IP & NVR Matrix</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-600"></i> Kontrak SLA U-Remote NOC</li>
+          </ul>
         </div>
 
-        <div class="p-7 rounded crosshair-card space-y-3">
-          <div class="text-[10px] font-mono text-blox-emerald font-bold">DELTA SILICON 5 LIPPO CIKARANG</div>
-          <h3 class="font-bold text-lg text-white font-space">PT Iwata Bolt Indonesia</h3>
-          <p class="text-xs text-slate-400 leading-relaxed font-sans">
-            Automotive Fastener Leader — Proactive remote IT support, plant workstation maintenance, and internal communication server setup.
+        <!-- PILAR 2 -->
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4 hover:shadow-md transition">
+          <div class="flex justify-between items-start">
+            <span class="px-2.5 py-1 rounded bg-emerald-50 text-emerald-700 font-mono text-xs font-bold">PILAR 02</span>
+            <i data-lucide="code-2" class="w-6 h-6 text-emerald-600"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Software Engineering & Custom ERP</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Menghilangkan beban spreadsheet manual dan kertas yang rentan hilang dengan membangun aplikasi web operasional khusus, dashboard monitoring, integrasi database PostgreSQL/MySQL, dan modul ERP kustom.
           </p>
+          <ul class="pt-3 border-t border-slate-100 grid grid-cols-2 gap-2 text-xs text-slate-700 font-medium">
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Aplikasi Web & Portal Internal</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Integrasi Database & ERP</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Form Digital & Approval Flow</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> 100% Berbasis Kontrak API</li>
+          </ul>
         </div>
 
-        <div class="p-7 rounded crosshair-card space-y-3">
-          <div class="text-[10px] font-mono text-blox-emerald font-bold">CIKARANG MANUFACTURING HUB</div>
-          <h3 class="font-bold text-lg text-white font-space">PT Bitech Japan Gasket</h3>
-          <p class="text-xs text-slate-400 leading-relaxed font-sans">
-            Automotive Gasket Manufacturer — High-density CCTV deployment, structured fiber optic distribution, and network switch upgrades.
+        <!-- PILAR 3 -->
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4 hover:shadow-md transition">
+          <div class="flex justify-between items-start">
+            <span class="px-2.5 py-1 rounded bg-amber-50 text-amber-700 font-mono text-xs font-bold">PILAR 03</span>
+            <i data-lucide="hard-drive" class="w-6 h-6 text-amber-600"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Hardware Procurement & Lifecycle</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Pengadaan perangkat keras komputer kantor, laptop manajemen, printer industri, server Dell/HP, perangkat access door RFID, serta lisensi resmi Microsoft 365 dan sistem proteksi antivirus korporat.
           </p>
+          <ul class="pt-3 border-t border-slate-100 grid grid-cols-2 gap-2 text-xs text-slate-700 font-medium">
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i> Workstation PC & Laptop</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i> Access Door & Mesin Absensi</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i> Lisensi Microsoft 365 Resmi</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i> Garansi Resmi Distributor</li>
+          </ul>
+        </div>
+
+        <!-- PILAR 4 -->
+        <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4 hover:shadow-md transition">
+          <div class="flex justify-between items-start">
+            <span class="px-2.5 py-1 rounded bg-purple-50 text-purple-700 font-mono text-xs font-bold">PILAR 04</span>
+            <i data-lucide="bot" class="w-6 h-6 text-purple-600"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">Otomasi Alur Kerja & AI Asisten Bisnis</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Menghubungkan sistem internal dengan integrasi notifikasi gateway WhatsApp/Telegram, pengarsipan otomatis dokumen PO/Invoice, serta asisten AI privat yang dilatih khusus dengan SOP dan basis data perusahaan.
+          </p>
+          <ul class="pt-3 border-t border-slate-100 grid grid-cols-2 gap-2 text-xs text-slate-700 font-medium">
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-600"></i> Notifikasi Tiket & WhatsApp</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-600"></i> OCR & Ekstraksi Dokumen</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-600"></i> Pengarsipan Terpusat</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-600"></i> Keamanan Data Privat</li>
+          </ul>
         </div>
 
       </div>
@@ -629,85 +417,212 @@
     </div>
   </section>
 
-  <!-- SECTION 6: TECHNICAL RFQ FORM (EXACT BOTBLOX TABULAR INPUT MATRIX) -->
-  <section id="rfq" class="py-24 bg-blox-dark border-b border-blox-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+  <!-- SECTION: INTERACTIVE SLA SIZING CALCULATOR -->
+  <section id="calculator" class="py-20 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
+      
+      <div class="max-w-3xl space-y-2">
+        <div class="text-xs font-mono font-bold uppercase tracking-widest text-brand-600">SIMULASI SIZING & BIAYA</div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Kalkulator Kebutuhan Paket Managed IT (SLA Retainer).
+        </h2>
+        <p class="text-sm text-slate-600">
+          Geser parameter di bawah ini untuk melihat estimasi tingkatan paket pemeliharaan rutin, kecepatan respon penanganan, dan perkiraan biaya bulanan.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-10 rounded-2xl bg-slate-900 text-white shadow-xl">
         
-        <div class="lg:col-span-5 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-blox-surface border border-blox-border text-[11px] font-mono text-slate-300">
-            <span class="text-blox-orange font-bold">[ + ]</span>
-            <span>TECHNICAL ENGAGEMENT & SURVEY</span>
-            <span class="text-blox-orange font-bold">[ + ]</span>
+        <!-- LEFT SLIDERS -->
+        <div class="lg:col-span-7 space-y-8">
+          
+          <!-- PC Slider -->
+          <div class="space-y-3">
+            <div class="flex justify-between items-center text-xs font-mono">
+              <span class="text-slate-300 font-semibold uppercase">1. Jumlah Workstation & PC Kantor:</span>
+              <span class="text-amber-400 font-bold text-sm"><span id="val-pc">20</span> Unit</span>
+            </div>
+            <input type="range" id="input-pc" min="5" max="150" value="20" step="5" oninput="calculateSla()" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-amber-500">
+            <div class="flex justify-between text-[11px] font-mono text-slate-400">
+              <span>5 PC (Kantor Kecil)</span>
+              <span>50 PC (Menengah)</span>
+              <span>150+ PC (Pabrik Besar)</span>
+            </div>
           </div>
-          <h2 class="text-3xl sm:text-4xl font-bold text-white font-space tracking-tight leading-tight">
-            Consult Your IT Infrastructure & Automation Scope.
+
+          <!-- CCTV Slider -->
+          <div class="space-y-3">
+            <div class="flex justify-between items-center text-xs font-mono">
+              <span class="text-slate-300 font-semibold uppercase">2. Titik Kamera CCTV IP & NVR:</span>
+              <span class="text-white font-bold text-sm"><span id="val-cctv">16</span> Titik</span>
+            </div>
+            <input type="range" id="input-cctv" min="4" max="64" value="16" step="4" oninput="calculateSla()" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-brand-500">
+            <div class="flex justify-between text-[11px] font-mono text-slate-400">
+              <span>4 Titik</span>
+              <span>24 Titik (Area Gudang/Pabrik)</span>
+              <span>64 Titik (Full Coverage)</span>
+            </div>
+          </div>
+
+          <!-- Server Rack Slider -->
+          <div class="space-y-3">
+            <div class="flex justify-between items-center text-xs font-mono">
+              <span class="text-slate-300 font-semibold uppercase">3. Server & Switch Rack Management:</span>
+              <span class="text-white font-bold text-sm"><span id="val-server">2</span> Rack Server</span>
+            </div>
+            <input type="range" id="input-server" min="1" max="10" value="2" step="1" oninput="calculateSla()" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+          </div>
+
+          <!-- AI Workflow Checkbox -->
+          <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input type="checkbox" id="check-ai" onchange="calculateSla()" class="w-4 h-4 rounded bg-slate-800 border-slate-700 text-amber-500 focus:ring-0">
+              <span class="text-xs font-medium text-slate-300">Tambahkan Modul Otomasi Notifikasi & Gateway WhatsApp</span>
+            </label>
+            <span class="text-xs font-mono text-amber-400 font-semibold">+ Otomasi Bisnis</span>
+          </div>
+
+        </div>
+
+        <!-- RIGHT RESULT SUMMARY -->
+        <div class="lg:col-span-5 flex flex-col justify-between p-7 rounded-xl bg-slate-800 border border-slate-700 space-y-6">
+          
+          <div class="space-y-4">
+            <div class="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest pb-3 border-b border-slate-700">
+              REKOMENDASI SPESIFIKASI SLA
+            </div>
+
+            <div>
+              <div class="text-[11px] text-slate-400 font-mono">TINGKATAN PAKET:</div>
+              <div id="est-package" class="text-xl font-bold text-white mt-0.5">U-ITSM Business Standard</div>
+            </div>
+
+            <div class="space-y-2 text-xs font-mono text-slate-300">
+              <div class="flex justify-between py-1 border-b border-slate-700/50">
+                <span class="text-slate-400">Kecepatan Respon:</span>
+                <span id="est-sla" class="font-bold text-emerald-400">&lt; 30 Menit</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-slate-700/50">
+                <span class="text-slate-400">Kunjungan On-Site:</span>
+                <span id="est-visit" class="text-white">2x / Bulan + On-Call</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-slate-700/50">
+                <span class="text-slate-400">Audit & Backup:</span>
+                <span class="text-white">Rutin 30 Hari Terjadwal</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-700 space-y-3">
+            <div class="flex justify-between items-baseline">
+              <span class="text-xs text-slate-400 font-mono">Estimasi Retainer:</span>
+              <div class="text-right">
+                <div id="est-price" class="text-2xl font-mono font-bold text-amber-400">Rp 3.500.000</div>
+                <div class="text-[10px] text-slate-400 font-mono">/ bulan (Tagihan Resmi B2B)</div>
+              </div>
+            </div>
+
+            <button onclick="sendWaEstimation()" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider rounded-lg transition shadow flex items-center justify-center gap-2 font-mono">
+              <i data-lucide="message-square" class="w-4 h-4"></i>
+              <span>Kirim Rincian Sizing ke WhatsApp</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: RFQ / FORM PENAWARAN RESMI -->
+  <section id="rfq" class="py-20 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- LEFT CONTACT DETAILS -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs font-semibold">
+            <i data-lucide="clipboard-list" class="w-3.5 h-3.5"></i>
+            <span>Formulir Permintaan Penawaran (SPH)</span>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
+            Konsultasikan Kebutuhan IT & Penawaran Harga Resmi.
           </h2>
-          <p class="text-sm text-slate-300 leading-relaxed font-sans">
-            Our certified systems engineers provide on-site facility surveys, security vulnerability assessments, and formal commercial quotations (SPH) within 1 business day.
+
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Tim Solution Architect PT Unitek Mitra Solusi siap melakukan survey lokasi ke pabrik / kantor Anda di kawasan industri Jabodetabek dan menerbitkan Surat Penawaran Harga (SPH) resmi dalam 1 hari kerja.
           </p>
 
-          <div class="space-y-3 pt-2 text-xs font-mono text-slate-300">
-            <div class="p-4 rounded crosshair-card">
-              <span class="text-slate-500 text-[10px]">HEAD OFFICE & LAB:</span>
-              <div class="text-white font-medium mt-0.5 font-sans">Jl. Inspeksi Kalimalang, Pasirsari, Cikarang Selatan, Bekasi 17530</div>
+          <div class="space-y-3 pt-2 text-xs">
+            <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm space-y-1">
+              <div class="text-[10px] font-mono text-slate-500 font-bold uppercase">KANTOR OPERASIONAL & LAB:</div>
+              <div class="text-slate-800 font-medium leading-relaxed">
+                Jl. Inspeksi Kalimalang, Tegal Gede, RT.10/RW.04, Pasirsari, Cikarang Selatan, Bekasi, Jawa Barat 17530
+              </div>
             </div>
-            <div class="p-4 rounded crosshair-card">
-              <span class="text-slate-500 text-[10px]">OFFICIAL BANK ACCOUNT:</span>
-              <div class="text-white font-medium mt-0.5">Bank Mandiri: 156-00-1543608-4 (PT Unitek Mitra Solusi)</div>
+
+            <div class="p-4 rounded-xl bg-white border border-slate-200 shadow-sm space-y-1">
+              <div class="text-[10px] font-mono text-slate-500 font-bold uppercase">REKENING BANK RESMI PERUSAHAAN:</div>
+              <div class="text-slate-800 font-mono font-medium">
+                Bank Mandiri: <span class="font-bold text-brand-900">156-00-1543608-4</span> (a/n PT Unitek Mitra Solusi)
+              </div>
             </div>
           </div>
         </div>
 
+        <!-- RIGHT FORM -->
         <div class="lg:col-span-7">
-          <div class="rounded p-8 sm:p-10 space-y-6 shadow-2xl crosshair-card">
-            <div class="border-b border-blox-borderSubtle pb-4">
-              <h3 class="text-lg font-bold text-white font-space">Request Technical Quotation (RFQ)</h3>
-              <p class="text-xs text-slate-400 mt-1 font-sans">Submit your facility details for tailored engineering sizing.</p>
+          <div class="bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-lg space-y-6">
+            <div>
+              <h3 class="text-lg font-bold text-slate-900">Formulir Permintaan SPH / Survey</h3>
+              <p class="text-xs text-slate-500 mt-1">Lengkapi form berikut untuk penanganan langsung oleh tim teknis kami.</p>
             </div>
 
-            <form onsubmit="event.preventDefault(); alert('Terima kasih! Permintaan penawaran teknis telah dicatat. Tim Solution Architect PT Unitek Mitra Solusi akan segera menghubungi Anda.');" class="space-y-4 text-xs font-sans">
+            <form id="rfq-form" onsubmit="handleFormSubmit(event)" class="space-y-4 text-xs">
               
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="space-y-1.5">
-                  <label class="font-mono text-slate-300">Full Name *</label>
-                  <input type="text" required placeholder="Budi Santoso" class="w-full bg-blox-dark border border-blox-border rounded px-4 py-3 text-white focus:outline-none focus:border-blox-orange font-sans">
+                  <label class="font-semibold text-slate-700">Nama PIC / Penanggung Jawab *</label>
+                  <input type="text" id="pic_name" required placeholder="Contoh: Budi Santoso" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-slate-800 focus:outline-none focus:border-brand-600 focus:bg-white transition">
                 </div>
                 <div class="space-y-1.5">
-                  <label class="font-mono text-slate-300">Company Name *</label>
-                  <input type="text" required placeholder="PT Industrial Manufacturing" class="w-full bg-blox-dark border border-blox-border rounded px-4 py-3 text-white focus:outline-none focus:border-blox-orange font-sans">
+                  <label class="font-semibold text-slate-700">Nama Perusahaan / PT *</label>
+                  <input type="text" id="company_name" required placeholder="PT ..." class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-slate-800 focus:outline-none focus:border-brand-600 focus:bg-white transition">
                 </div>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="space-y-1.5">
-                  <label class="font-mono text-slate-300">Corporate Email *</label>
-                  <input type="email" required placeholder="pic@company.co.id" class="w-full bg-blox-dark border border-blox-border rounded px-4 py-3 text-white focus:outline-none focus:border-blox-orange font-sans">
+                  <label class="font-semibold text-slate-700">Nomor WhatsApp / HP Aktif *</label>
+                  <input type="tel" id="pic_phone" required placeholder="08..." class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-slate-800 focus:outline-none focus:border-brand-600 focus:bg-white transition">
                 </div>
                 <div class="space-y-1.5">
-                  <label class="font-mono text-slate-300">Phone / WhatsApp *</label>
-                  <input type="tel" required placeholder="08123456789" class="w-full bg-blox-dark border border-blox-border rounded px-4 py-3 text-white focus:outline-none focus:border-blox-orange font-sans">
+                  <label class="font-semibold text-slate-700">Email Perusahaan / Kerja *</label>
+                  <input type="email" id="pic_email" required placeholder="pic@perusahaan.co.id" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-slate-800 focus:outline-none focus:border-brand-600 focus:bg-white transition">
                 </div>
               </div>
 
               <div class="space-y-1.5">
-                <label class="font-mono text-slate-300">Primary Solution Category *</label>
-                <select class="w-full bg-blox-dark border border-blox-border rounded px-4 py-3 text-white focus:outline-none focus:border-blox-orange font-sans">
-                  <option>Stage 1: Managed IT Infrastructure & Network NOC / CCTV</option>
-                  <option>Stage 2: Custom Software Development & ERP Integration</option>
-                  <option>Stage 3: Autonomous AI Agent Workflows</option>
-                  <option>Stage 4: B2B Digital Marketing & Growth Engine</option>
-                  <option>Complete End-to-End Managed Solution (All Stages)</option>
+                <label class="font-semibold text-slate-700">Kategori Solusi yang Dibutuhkan *</label>
+                <select id="solution_type" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3.5 py-2.5 text-slate-800 focus:outline-none focus:border-brand-600 focus:bg-white transition">
+                  <option value="Kontrak Pemeliharaan Managed IT & Jaringan (SLA Bulanan)">Kontrak Pemeliharaan Managed IT & Jaringan (SLA Bulanan)</option>
+                  <option value="Instalasi Jaringan Kabel LAN CAT6 / Fiber Optik Pabrik">Instalasi Jaringan Kabel LAN CAT6 / Fiber Optik Pabrik</option>
+                  <option value="Pemasangan / Upgrade Sistem CCTV IP & NVR Matrix">Pemasangan / Upgrade Sistem CCTV IP & NVR Matrix</option>
+                  <option value="Pengadaan Komputer, Server, Switch, & Lisensi M365">Pengadaan Komputer, Server, Switch, & Lisensi M365</option>
+                  <option value="Pengembangan Software Kustom & Integrasi ERP">Pengembangan Software Kustom & Integrasi ERP</option>
+                  <option value="Solusi Menyeluruh (All-In-One Enterprise IT)">Solusi Menyeluruh (All-In-One Enterprise IT)</option>
                 </select>
               </div>
 
               <div class="space-y-1.5">
-                <label class="font-mono text-slate-300">Project Requirements & Scope Description *</label>
-                <textarea rows="4" required placeholder="Describe your user count, plant location, current challenges, and target go-live date..." class="w-full bg-blox-dark border border-blox-border rounded p-4 text-white focus:outline-none focus:border-blox-orange font-sans leading-relaxed"></textarea>
+                <label class="font-semibold text-slate-700">Deskripsi Lokasi & Rincian Kebutuhan *</label>
+                <textarea id="project_notes" rows="3" required placeholder="Sebutkan lokasi pabrik/kantor, jumlah unit/titik, kendala yang sedang dialami, dan target waktu pengerjaan..." class="w-full bg-slate-50 border border-slate-300 rounded-lg p-3.5 text-slate-800 focus:outline-none focus:border-brand-600 focus:bg-white transition leading-relaxed"></textarea>
               </div>
 
-              <button type="submit" class="w-full py-4 rounded bg-blox-orange hover:bg-blox-orangeHover text-white font-bold font-mono text-xs uppercase tracking-wider transition shadow-xl flex items-center justify-center gap-2">
-                <span>Submit Technical RFQ</span>
+              <button type="submit" class="w-full py-3.5 rounded-lg bg-brand-900 hover:bg-brand-800 text-white font-bold text-xs uppercase tracking-wider transition shadow-md flex items-center justify-center gap-2">
+                <span>Kirim Permintaan Penawaran Resmi</span>
                 <i data-lucide="send" class="w-3.5 h-3.5"></i>
               </button>
 
@@ -719,169 +634,100 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-blox-black text-slate-400 text-xs py-16 mt-auto border-t border-blox-border">
+  <!-- ABOUT & CORPORATE LEGALITY -->
+  <section id="about" class="py-16 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-blox-borderSubtle">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
+        <div class="space-y-2">
+          <div class="text-xs font-mono font-bold text-brand-600 uppercase">PROFIL PERUSAHAAN</div>
+          <h3 class="text-lg font-bold text-slate-900">PT Unitek Mitra Solusi</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Didirikan untuk menjawab tantangan pemeliharaan teknologi bagi sektor industri dan komersial di koridor timur Jakarta (Bekasi, Cikarang, Karawang). Mengedepankan akuntabilitas, SLA yang terukur, dan rekayasa berstandar tinggi.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <div class="text-xs font-mono font-bold text-brand-600 uppercase">STANDAR MUTU & K3L</div>
+          <h3 class="text-lg font-bold text-slate-900">Kepatuhan Operasional Industri</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Teknisi kami dibekali sertifikasi K3 (Ahli K3 Umum) untuk pengerjaan kabel di ketinggian pabrik, standardisasi kabel data tersertifikasi Fluke Test, serta tata kelola keamanan informasi berbasis ISO 27001.
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <div class="text-xs font-mono font-bold text-brand-600 uppercase">AKUNTABILITAS BISNIS</div>
+          <h3 class="text-lg font-bold text-slate-900">Kepatuhan Pajak & Faktur Resmi</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Setiap transaksi proyek didukung kontrak resmi (SPK), Berita Acara Serah Terima (BAST), invoice perusahaan, dan penerbitan Faktur Pajak resmi yang sesuai dengan regulasi Ditjen Pajak RI.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-14 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-slate-800">
+        
+        <!-- COL 1 -->
         <div class="md:col-span-5 space-y-4">
           <div class="flex items-center space-x-3">
-            <div class="w-8 h-8 rounded bg-blox-orange flex items-center justify-center font-mono font-bold text-white text-sm">
+            <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center font-bold text-white text-xs shadow">
               UMS
             </div>
-            <span class="font-bold text-lg text-white font-space">PT UNITEK MITRA SOLUSI</span>
+            <span class="font-bold text-base text-white">PT UNITEK MITRA SOLUSI</span>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed max-w-sm font-sans">
-            Enterprise IT Managed Services, Custom Software Engineering, and Autonomous AI Agent Architecture for Industrial Leaders in Indonesia.
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            Enterprise Managed IT Services, Network Infrastructure Engineering, and Custom Business Software Solutions.
           </p>
-          <div class="text-[10px] font-mono text-slate-500">
-            Legal Entity: PT Unitek Mitra Solusi • SAK EMKM & DJP Tax Compliant
+          <div class="text-[11px] font-mono text-slate-500">
+            Badan Hukum: PT Unitek Mitra Solusi • NPWP & SAK EMKM Compliant
           </div>
         </div>
 
+        <!-- COL 2 -->
         <div class="md:col-span-3 space-y-3 font-mono text-xs">
-          <div class="font-bold text-white uppercase tracking-wider">Solution Pillars</div>
-          <ul class="space-y-2 text-slate-400 text-xs">
-            <li><a href="#solutions" class="hover:text-blox-orange transition">01. Managed IT & Network NOC</a></li>
-            <li><a href="#solutions" class="hover:text-blox-orange transition">02. Custom Software & ERP</a></li>
-            <li><a href="#solutions" class="hover:text-blox-orange transition">03. Autonomous AI Agents</a></li>
-            <li><a href="#solutions" class="hover:text-blox-orange transition">04. B2B Digital Growth Engine</a></li>
+          <div class="font-bold text-slate-200 uppercase tracking-wider">Cakupan Solusi</div>
+          <ul class="space-y-2 text-slate-400 text-xs font-sans">
+            <li><a href="#solutions" class="hover:text-amber-400 transition">Managed IT Infrastructure & NOC</a></li>
+            <li><a href="#solutions" class="hover:text-amber-400 transition">Instalasi Kabel LAN & Fiber Optik</a></li>
+            <li><a href="#solutions" class="hover:text-amber-400 transition">CCTV IP Surveillance & NVR Matrix</a></li>
+            <li><a href="#solutions" class="hover:text-amber-400 transition">Software ERP & Integrasi Database</a></li>
           </ul>
         </div>
 
+        <!-- COL 3 -->
         <div class="md:col-span-4 space-y-3 text-xs">
-          <div class="font-mono font-bold text-white uppercase tracking-wider">Operational Contacts</div>
-          <p class="text-xs text-slate-400 leading-relaxed font-sans">
-            Jl. Inspeksi Kalimalang, Tegal Gede, RT.10/RW.04, Pasirsari, Cikarang Selatan, Bekasi 17530.
+          <div class="font-mono font-bold text-slate-200 uppercase tracking-wider">Kontak & Lokasi Kantor</div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Jl. Inspeksi Kalimalang, Tegal Gede, RT.10/RW.04, Pasirsari, Cikarang Selatan, Bekasi, Jawa Barat 17530.
           </p>
           <div class="space-y-1 font-mono text-xs text-slate-300">
-            <div>Hotline: <a href="tel:+6282213928230" class="text-white hover:text-blox-orange font-bold">+62 822 1392 8230</a></div>
-            <div>Technical Email: <a href="mailto:contact@unitek.id" class="text-white hover:text-blox-orange font-bold">contact@unitek.id</a></div>
+            <div>Direct / WA: <a href="https://wa.me/6282213928230" class="text-white hover:text-amber-400 font-bold">+62 822 1392 8230</a></div>
+            <div>Email Resmi: <a href="mailto:info@unitek.id" class="text-white hover:text-amber-400 font-bold">info@unitek.id</a></div>
           </div>
         </div>
 
       </div>
 
-      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-[10px] font-mono text-slate-500 gap-2">
-        <div>&copy; 2026 PT Unitek Mitra Solusi. All rights reserved.</div>
-        <div>Engineered for Industrial Reliability • ISO 27001 Security Standard</div>
+      <div class="flex flex-col sm:flex-row justify-between items-center text-[11px] font-mono text-slate-500 gap-2">
+        <div>&copy; 2026 PT Unitek Mitra Solusi. Hak cipta dilindungi undang-undang.</div>
+        <div>Standardized for Industrial Reliability • Bekasi, Jawa Barat</div>
       </div>
 
     </div>
   </footer>
 
-  <!-- THREE.JS HIGH-PERFORMANCE WEBGL ENGINE -->
+  <!-- JAVASCRIPT LOGIC -->
   <script>
     lucide.createIcons();
 
-    const canvas = document.getElementById('webgl-canvas');
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(50, window.innerWidth / (window.innerHeight * 0.75), 0.1, 1000);
-    camera.position.z = 240;
-
-    const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
-    renderer.setSize(canvas.parentElement.clientWidth, canvas.parentElement.clientHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-    const nodeCount = 75;
-    const geo = new THREE.BufferGeometry();
-    const positions = new Float32Array(nodeCount * 3);
-    const velocities = [];
-
-    for (let i = 0; i < nodeCount; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 360;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 200;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 120;
-
-      velocities.push({
-        x: (Math.random() - 0.5) * 0.2,
-        y: (Math.random() - 0.5) * 0.2,
-        z: (Math.random() - 0.5) * 0.15
-      });
-    }
-
-    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-    const pMat = new THREE.PointsMaterial({
-      color: 0xff5500, // Signature BotBlox Orange
-      size: 3,
-      transparent: true,
-      opacity: 0.8
-    });
-
-    const pointMesh = new THREE.Points(geo, pMat);
-    scene.add(pointMesh);
-
-    const lineMat = new THREE.LineBasicMaterial({
-      color: 0x555555,
-      transparent: true,
-      opacity: 0.18
-    });
-
-    let lineSegmentMesh = null;
-
-    let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
-    window.addEventListener('mousemove', (e) => {
-      mouseX = (e.clientX - window.innerWidth / 2) * 0.08;
-      mouseY = (e.clientY - window.innerHeight / 2) * 0.08;
-    });
-
-    function renderLoop() {
-      requestAnimationFrame(renderLoop);
-
-      targetX += (mouseX - targetX) * 0.04;
-      targetY += (mouseY - targetY) * 0.04;
-      camera.position.x = targetX;
-      camera.position.y = -targetY;
-      camera.lookAt(scene.position);
-
-      const pos = geo.attributes.position.array;
-      const linePositions = [];
-
-      for (let i = 0; i < nodeCount; i++) {
-        pos[i * 3] += velocities[i].x;
-        pos[i * 3 + 1] += velocities[i].y;
-        pos[i * 3 + 2] += velocities[i].z;
-
-        if (Math.abs(pos[i * 3]) > 180) velocities[i].x *= -1;
-        if (Math.abs(pos[i * 3 + 1]) > 100) velocities[i].y *= -1;
-        if (Math.abs(pos[i * 3 + 2]) > 60) velocities[i].z *= -1;
-
-        for (let j = i + 1; j < nodeCount; j++) {
-          const dx = pos[i * 3] - pos[j * 3];
-          const dy = pos[i * 3 + 1] - pos[j * 3 + 1];
-          const dz = pos[i * 3 + 2] - pos[j * 3 + 2];
-          const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
-
-          if (dist < 55) {
-            linePositions.push(pos[i * 3], pos[i * 3 + 1], pos[i * 3 + 2]);
-            linePositions.push(pos[j * 3], pos[j * 3 + 1], pos[j * 3 + 2]);
-          }
-        }
-      }
-
-      geo.attributes.position.needsUpdate = true;
-
-      if (lineSegmentMesh) scene.remove(lineSegmentMesh);
-      const lineGeo = new THREE.BufferGeometry();
-      lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
-      lineSegmentMesh = new THREE.LineSegments(lineGeo, lineMat);
-      scene.add(lineSegmentMesh);
-
-      renderer.render(scene, camera);
-    }
-
-    renderLoop();
-
-    window.addEventListener('resize', () => {
-      const container = canvas.parentElement;
-      camera.aspect = container.clientWidth / container.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(container.clientWidth, container.clientHeight);
-    });
-
     // ----------------------------------------------------
-    // MOBILE MENU LOGIC
+    // MOBILE DRAWER
     // ----------------------------------------------------
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -897,7 +743,7 @@
     });
 
     // ----------------------------------------------------
-    // SLA CALCULATOR LOGIC
+    // SLA SIZING CALCULATOR
     // ----------------------------------------------------
     function calculateSla() {
       const pc = parseInt(document.getElementById('input-pc').value);
@@ -909,24 +755,24 @@
       document.getElementById('val-cctv').innerText = cctv;
       document.getElementById('val-server').innerText = server;
 
-      let basePrice = (pc * 75000) + (cctv * 50000) + (server * 450000);
+      let basePrice = (pc * 75000) + (cctv * 45000) + (server * 350000);
       let pkg = "U-ITSM Business Standard";
-      let sla = "< 30 Minutes";
-      let visit = "2x / Month + On-Call";
+      let sla = "< 30 Menit";
+      let visit = "2x / Bulan + On-Call";
 
-      if (pc >= 80 || cctv >= 32 || server >= 6) {
+      if (pc >= 60 || cctv >= 32 || server >= 5) {
         pkg = "U-ITSM Enterprise Plant";
-        sla = "< 15 Minutes";
-        visit = "4x / Month + 24/7 Priority Standby";
-      } else if (pc <= 15 && cctv <= 8) {
+        sla = "< 15 Menit";
+        visit = "4x / Bulan + 24/7 Priority Standby";
+      } else if (pc <= 15 && cctv <= 8 && server <= 1) {
         pkg = "U-Remote Core SLA";
-        sla = "< 1 Hour";
-        visit = "1x / Month";
+        sla = "< 1 Jam";
+        visit = "1x / Bulan";
       }
 
       if (withAI) {
-        basePrice += 1500000;
-        pkg += " + AI Copilot";
+        basePrice += 1000000;
+        pkg += " + Otomasi";
       }
 
       basePrice = Math.max(2500000, basePrice);
@@ -935,6 +781,42 @@
       document.getElementById('est-sla').innerText = sla;
       document.getElementById('est-visit').innerText = visit;
       document.getElementById('est-price').innerText = "Rp " + basePrice.toLocaleString('id-ID');
+    }
+
+    function sendWaEstimation() {
+      const pc = document.getElementById('val-pc').innerText;
+      const cctv = document.getElementById('val-cctv').innerText;
+      const server = document.getElementById('val-server').innerText;
+      const pkg = document.getElementById('est-package').innerText;
+      const sla = document.getElementById('est-sla').innerText;
+      const price = document.getElementById('est-price').innerText;
+
+      const text = `Halo PT Unitek Mitra Solusi,\n\nSaya ingin konsultasi penawaran Managed IT SLA berdasarkan simulasi sizing:\n- Workstation PC: ${pc} Unit\n- CCTV IP: ${cctv} Titik\n- Server Rack: ${server} Rack\n- Paket Rekomendasi: ${pkg}\n- Respon SLA: ${sla}\n- Estimasi Retainer: ${price}/bulan\n\nMohon informasi ketersediaan jadwal survey lokasi dan draft SPH resmi. Terima kasih.`;
+      
+      const url = `https://wa.me/6282213928230?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+    }
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const pic = document.getElementById('pic_name').value;
+      const company = document.getElementById('company_name').value;
+      const phone = document.getElementById('pic_phone').value;
+      const email = document.getElementById('pic_email').value;
+      const category = document.getElementById('solution_type').value;
+      const notes = document.getElementById('project_notes').value;
+
+      const text = `*Permintaan SPH Resmi — PT Unitek Mitra Solusi*\n\n` +
+                   `*Nama PIC:* ${pic}\n` +
+                   `*Perusahaan:* ${company}\n` +
+                   `*WhatsApp/HP:* ${phone}\n` +
+                   `*Email:* ${email}\n` +
+                   `*Kategori Solusi:* ${category}\n` +
+                   `*Rincian Scope:* ${notes}\n\n` +
+                   `Mohon segera ditindaklanjuti. Terima kasih.`;
+
+      const url = `https://wa.me/6282213928230?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
     }
 
     calculateSla();
