@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Brief Dashboard — Redesign Portal unitek.id</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background-color: #070a12;
+      color: #f8fafc;
+    }
+    .font-syne { font-family: 'Syne', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+  </style>
+</head>
+<body class="bg-[#070a12] text-slate-100 min-h-screen flex flex-col p-6 sm:p-10 selection:bg-amber-500 selection:text-slate-950">
+
+  <div class="max-w-6xl mx-auto w-full space-y-10">
+    
+    <!-- HEADER -->
+    <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 border-b border-slate-800">
+      <div>
+        <div class="flex items-center gap-2.5 text-xs font-mono text-amber-400 font-bold mb-1">
+          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+          <span>STAGE 1: PROJECT MANAGER BRIEF DASHBOARD</span>
+        </div>
+        <h1 class="font-syne text-3xl sm:text-4xl font-bold text-white tracking-tight">
+          Redesign Portal B2B PT Unitek Mitra Solusi
+        </h1>
+        <p class="text-xs text-slate-400 mt-1 font-mono">
+          Ref: BotBlox.com • Engine: WebGL 3D Mesh + Antigravity TDD • Target: Jabodetabek Industrial Enterprise
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-xl text-xs font-mono uppercase tracking-wider transition shadow-lg flex items-center gap-2">
+          <span>Buka Live WebGL Prototype</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </header>
+
+    <!-- 4-STAGE ENTERPRISE MATURITY LADDER -->
+    <section class="space-y-4">
+      <div class="text-xs font-mono text-slate-400 uppercase font-bold tracking-wider">
+        01 • 4 Pilar Solusi End-to-End Unitek (The Strategic Ladder)
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        
+        <div class="p-5 rounded-2xl bg-[#0d1322] border border-slate-800 space-y-3 relative overflow-hidden">
+          <div class="text-xs font-mono font-bold text-amber-400">PILAR 1 • FONDASI</div>
+          <h3 class="font-syne text-base font-bold text-white">IT Infrastructure & Managed NOC</h3>
+          <p class="text-xs text-slate-400 leading-relaxed font-body">
+            Perencanaan, pengadaan, penarikan kabel LAN/Fiber, CCTV IP, server, dan operasional U-Remote 24/7.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-[#0d1322] border border-slate-800 space-y-3 relative overflow-hidden">
+          <div class="text-xs font-mono font-bold text-sky-400">PILAR 2 • SISTEM</div>
+          <h3 class="font-syne text-base font-bold text-white">Software & Backend Solutions</h3>
+          <p class="text-xs text-slate-400 leading-relaxed font-body">
+            Otomasi proses manual pabrik menjadi web app kustom, modul ERP, dan integrasi API database.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-[#0d1322] border border-slate-800 space-y-3 relative overflow-hidden">
+          <div class="text-xs font-mono font-bold text-emerald-400">PILAR 3 • INTELIJEN</div>
+          <h3 class="font-syne text-base font-bold text-white">Autonomous AI Agents</h3>
+          <p class="text-xs text-slate-400 leading-relaxed font-body">
+            Asisten AI khusus yang memahami proses bisnis klien untuk mengotomasi tugas administratif 24/7.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-[#0d1322] border border-slate-800 space-y-3 relative overflow-hidden">
+          <div class="text-xs font-mono font-bold text-purple-400">PILAR 4 • PASAR</div>
+          <h3 class="font-syne text-base font-bold text-white">B2B Digital Growth Engine</h3>
+          <p class="text-xs text-slate-400 leading-relaxed font-body">
+            Membantu perusahaan klien membangun reputasi digital, branding B2B, dan lead generation industri.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WBS ROADMAP & TASK CHECKLIST -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- LEFT: WBS PHASES (7 Cols) -->
+      <div class="lg:col-span-7 space-y-4">
+        <div class="text-xs font-mono text-slate-400 uppercase font-bold tracking-wider">
+          02 • Work Breakdown Structure (WBS) & Milestones
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#0d1322] border border-slate-800 space-y-4">
+          
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80 text-xs">
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono font-bold text-[10px]">✓</span>
+              <span class="font-bold text-white">Fase 1: Interview Kebutuhan & Masterplan</span>
+            </div>
+            <span class="px-2 py-0.5 rounded bg-emerald-950 border border-emerald-500/40 text-emerald-400 font-mono text-[10px]">COMPLETED</span>
+          </div>
+
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80 text-xs">
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-mono font-bold text-[10px]">⚡</span>
+              <span class="font-bold text-white">Fase 2: WebGL 3D Canvas & Visual Mockup Studio</span>
+            </div>
+            <span class="px-2 py-0.5 rounded bg-amber-950 border border-amber-500/40 text-amber-400 font-mono text-[10px]">ACTIVE / IN PROGRESS</span>
+          </div>
+
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80 text-xs">
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center font-mono font-bold text-[10px]">3</span>
+              <span class="font-medium text-slate-300">Fase 3: Implementasi Penuh 4 Pilar & Sizing Calculator</span>
+            </div>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-400 font-mono text-[10px]">QUEUED</span>
+          </div>
+
+          <div class="flex items-center justify-between text-xs">
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center font-mono font-bold text-[10px]">4</span>
+              <span class="font-medium text-slate-300">Fase 4: QA SAST Audit, Anti-Slop Verification & Deploy</span>
+            </div>
+            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-400 font-mono text-[10px]">QUEUED</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT: DESIGN TOKENS (5 Cols) -->
+      <div class="lg:col-span-5 space-y-4">
+        <div class="text-xs font-mono text-slate-400 uppercase font-bold tracking-wider">
+          03 • Design System Tokens (BotBlox Vibe)
+        </div>
+
+        <div class="p-6 rounded-2xl bg-[#0d1322] border border-slate-800 space-y-4 text-xs font-mono">
+          
+          <div>
+            <span class="text-slate-400 text-[10px] uppercase">Palet Warna Utama:</span>
+            <div class="grid grid-cols-2 gap-2 mt-2">
+              <div class="p-2 rounded-lg bg-[#080c14] border border-slate-700 flex items-center justify-between">
+                <span>Stealth Dark</span>
+                <span class="text-slate-500">#080C14</span>
+              </div>
+              <div class="p-2 rounded-lg bg-[#f59e0b] text-slate-950 font-bold flex items-center justify-between">
+                <span>Hardware Amber</span>
+                <span>#F59E0B</span>
+              </div>
+              <div class="p-2 rounded-lg bg-[#10b981] text-slate-950 font-bold flex items-center justify-between">
+                <span>Signal Emerald</span>
+                <span>#10B981</span>
+              </div>
+              <div class="p-2 rounded-lg bg-[#101726] border border-slate-700 flex items-center justify-between">
+                <span>Panel Surface</span>
+                <span class="text-slate-500">#101726</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2 border-t border-slate-800/80">
+            <span class="text-slate-400 text-[10px] uppercase">Tipografi Berpasangan:</span>
+            <div class="mt-1 space-y-1 text-slate-300 font-sans">
+              <div>Display: <strong class="text-white font-syne">Syne (Bold 800)</strong></div>
+              <div>Body: <strong class="text-white">IBM Plex Sans (400/500)</strong></div>
+              <div>Data: <strong class="text-amber-400 font-mono">JetBrains Mono</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

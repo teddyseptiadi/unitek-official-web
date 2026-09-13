@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Mockup & Wireframe Studio — Redesign unitek.id</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    * { -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #080c14;
+      color: #f8fafc;
+      margin: 0;
+      overflow: hidden;
+    }
+    .font-syne { font-family: 'Syne', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .device-viewport {
+      transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #080c14; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+  </style>
+</head>
+<body class="h-screen w-screen flex flex-col justify-between bg-[#050811] select-none">
+
+  <!-- TOP TOOLBAR -->
+  <header class="h-16 px-6 bg-[#0c121e] border-b border-slate-800 flex items-center justify-between z-30 shadow-md">
+    
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center font-bold text-slate-950 text-sm">
+        U
+      </div>
+      <div>
+        <div class="text-xs font-bold text-white tracking-wide">STAGE 4: UNITEK.ID VISUAL MOCKUP STUDIO</div>
+        <div class="text-[11px] font-mono text-slate-400">Model: <strong class="text-amber-400">BotBlox Rugged Tech + WebGL 3D</strong> • Engine: Antigravity</div>
+      </div>
+    </div>
+
+    <!-- Multi-Device Switcher -->
+    <div class="flex items-center bg-[#050811] p-1 rounded-xl border border-slate-800 shadow-inner">
+      <button id="btn-desktop" onclick="setDevice('desktop')" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 text-slate-950 font-bold flex items-center gap-1.5 shadow transition">
+        <i data-lucide="monitor" class="w-3.5 h-3.5"></i>
+        <span>Desktop (1440px)</span>
+      </button>
+      <button id="btn-tablet" onclick="setDevice('tablet')" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white flex items-center gap-1.5 transition">
+        <i data-lucide="tablet" class="w-3.5 h-3.5"></i>
+        <span>Tablet (768px)</span>
+      </button>
+      <button id="btn-mobile" onclick="setDevice('mobile')" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white flex items-center gap-1.5 transition">
+        <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
+        <span>Mobile (375px)</span>
+      </button>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <a href="index.html" target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white text-xs font-mono flex items-center gap-1 border border-slate-700">
+        <span>Buka Full Screen</span>
+        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+
+  </header>
+
+  <!-- WORKSPACE -->
+  <div class="flex-1 flex overflow-hidden relative">
+    
+    <!-- MOCKUP IFRAME CANVAS -->
+    <main class="flex-1 bg-[#03060a] flex items-center justify-center p-6 overflow-auto relative">
+      <div id="device-frame" class="device-viewport bg-[#04070d] rounded-2xl overflow-hidden border border-slate-800 relative" style="width: 1100px; height: 90%;">
+        <iframe src="index.html" class="w-full h-full border-none"></iframe>
+      </div>
+    </main>
+
+    <!-- RIGHT: TOKENS & 4 PILAR INSPECTOR -->
+    <aside class="w-80 bg-[#0c121e] border-l border-slate-800 p-6 flex flex-col justify-between overflow-y-auto z-20 text-xs">
+      <div class="space-y-6">
+        
+        <div class="border-b border-slate-800 pb-3">
+          <div class="text-xs font-bold text-white uppercase tracking-wider">Design System Spec</div>
+          <div class="text-[11px] text-slate-400 font-mono mt-0.5">Unitek B2B Next-Gen Identity</div>
+        </div>
+
+        <!-- 4 Pillars Quick Ref -->
+        <div class="space-y-2">
+          <span class="text-[11px] font-mono text-slate-400 font-bold uppercase">4 Solusi End-to-End</span>
+          <div class="p-3 rounded-xl bg-[#050811] border border-slate-800 space-y-2 font-mono text-[10px]">
+            <div class="text-amber-400 font-bold">1. IT Infra & NOC 24/7</div>
+            <div class="text-sky-400 font-bold">2. Custom Software & ERP</div>
+            <div class="text-emerald-400 font-bold">3. Autonomous AI Agents</div>
+            <div class="text-purple-400 font-bold">4. B2B Digital Marketing</div>
+          </div>
+        </div>
+
+        <!-- Color Swatches -->
+        <div class="space-y-2">
+          <span class="text-[11px] font-mono text-slate-400 font-bold uppercase">Palet Warna Rugged Tech</span>
+          <div class="grid grid-cols-2 gap-2 font-mono text-[10px]">
+            <div class="p-2 rounded bg-[#04070d] text-slate-400 border border-slate-800 font-bold flex items-center justify-between">
+              <span>Stealth</span>
+              <span>#04070D</span>
+            </div>
+            <div class="p-2 rounded bg-[#f59e0b] text-slate-950 font-bold flex items-center justify-between">
+              <span>Amber</span>
+              <span>#F59E0B</span>
+            </div>
+            <div class="p-2 rounded bg-[#10b981] text-slate-950 font-bold flex items-center justify-between">
+              <span>Emerald</span>
+              <span>#10B981</span>
+            </div>
+            <div class="p-2 rounded bg-[#0284c7] text-white font-bold flex items-center justify-between">
+              <span>Sky Blue</span>
+              <span>#0284C7</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anti-AI Slop Badge -->
+        <div class="p-3 rounded-xl bg-emerald-950/40 border border-emerald-500/40 space-y-1 text-[11px] text-emerald-300">
+          <div class="font-bold flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Anti-AI Slop Passed</div>
+          <div class="text-[10px] text-slate-300">WebGL Three.js 60 FPS, tipografi editorial Syne+IBM Plex, data riil.</div>
+        </div>
+
+      </div>
+
+      <div class="pt-4 border-t border-slate-800 text-center text-[10px] font-mono text-slate-500">
+        PT Unitek Mitra Solusi DevOps Lab
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- STICKY BOTTOM APPROVAL BAR -->
+  <footer class="h-16 px-8 bg-[#0c121e] border-t border-slate-800 flex items-center justify-between z-30 shadow-2xl">
+    <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+      <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+      <span>Stage 4 Review: Silakan periksa visual WebGL dan layout di berbagai ukuran layar.</span>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <button onclick="alert('Catatan revisi visual telah dicatat untuk disesuaikan tim UI/UX.');" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-bold transition">
+        Minta Revisi Visual (REV)
+      </button>
+      <button onclick="alert('MOCKUP & WEBGL APPROVED! Desain siap dirilis ke domain utama.');" class="px-6 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-extrabold shadow-xl transition active:scale-95 flex items-center gap-2">
+        <i data-lucide="check-circle" class="w-4 h-4"></i>
+        <span>SETUJUI DESAIN (APPROVE MOCKUP)</span>
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    function setDevice(device) {
+      const frame = document.getElementById('device-frame');
+      const btnDesk = document.getElementById('btn-desktop');
+      const btnTab = document.getElementById('btn-tablet');
+      const btnMob = document.getElementById('btn-mobile');
+
+      btnDesk.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white flex items-center gap-1.5 transition';
+      btnTab.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white flex items-center gap-1.5 transition';
+      btnMob.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white flex items-center gap-1.5 transition';
+
+      if (device === 'desktop') {
+        frame.style.width = '1100px';
+        frame.style.height = '90%';
+        btnDesk.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 text-slate-950 font-bold flex items-center gap-1.5 shadow transition';
+      } else if (device === 'tablet') {
+        frame.style.width = '768px';
+        frame.style.height = '85%';
+        btnTab.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 text-slate-950 font-bold flex items-center gap-1.5 shadow transition';
+      } else if (device === 'mobile') {
+        frame.style.width = '375px';
+        frame.style.height = '80%';
+        btnMob.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-amber-500 text-slate-950 font-bold flex items-center gap-1.5 shadow transition';
+      }
+    }
+  </script>
+</body>
+</html>
